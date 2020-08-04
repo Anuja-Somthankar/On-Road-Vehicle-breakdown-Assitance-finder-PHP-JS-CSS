@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<title>Home-Admin</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link rel="stylesheet" type="text/css" href="style2.css">   
+<style>
+body, html {
+  height: 100%;
+  font-family: "Tangerine", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("image.jpg");
+  min-height: 100%;
+}
+
+.menu {
+  display: none;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+<body>
+<div class="w3-top">
+
+  <div class=" w3-black">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="homeadmin.html">Home</a>
+  <a href="adminpage.php">Approve</a>
+  <a href="viewmechanics.php">Review</a>
+  <a href="logoutadmin.php" >Log out</a>
+  
+</div>
+<div class="w3-container w3-black" >
+<span style="font-size:45px;cursor:pointer" onclick="openNav()">&#9776; </span>
+<span class="w3-text-with" style="font-size:45px"><b>CarSeva</b></span>
+</div>
+</div>
+</div>
+<!-- Header with image -->
+<header class="bgimg w3-display-container " id="home">
+  <br>
+ <div class="box1 w3-center" style='left: 400px;'>
+ <br>
+ <h5 class="w3-center "><span class=" w3-wide" style="font-size:50px"><b>Approve</b></span></h5>
+ <br>
+ <p style="font-size:30px">Approve the mechanics <br><br></p>
+ <br><br>
+ <input type="submit" onclick="location.href='adminpage.php';" name="submit" value="Approve">
+ </div>
+ <div class="box3 w3-center " style='left: 900px;'>
+ <br>
+ <h5 class="w3-center "><span class=" w3-wide" style="font-size:50px"><b>Review</b></span></h5>
+ <br>
+ <p style="font-size:30px">See all mechanics, and delete if <br>needed <br></p>
+ <br><br>
+ <input type="submit" onclick="location.href='viewmechanics.php';" name="submit" value="Review">
+ </div>
+ 
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(redirectToPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function redirectToPosition(position) {
+    window.location='mechanics.php?lat='+position.coords.latitude+'&long='+position.coords.longitude;
+}
+</script>
+</header>
+
+</body>
+</html>

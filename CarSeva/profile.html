@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <!-- Title Page-->
+    <title>Update Profile</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="main.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--gives the navigation bar on the side-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata"> <!-- same as above-->
+    <link rel="stylesheet" type="text/css" href="style2.css"> 
+    <style>
+        body, html {
+          height: 100%;
+          font-family: "Tangerine", sans-serif;
+        }
+        
+        .bgimg {
+          background-position: center;
+          background-size: cover;
+          background-image: url("image.jpg");
+          min-height: 100%;
+        }
+        
+        .menu {
+          display: none;
+        }
+        
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        
+        </style>
+        
+</head>
+
+<body>
+    <div class="w3-top">
+
+        <div class=" w3-black">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="home.html">Home</a>
+        <a href="mechanics.php">Mechanics</a>
+        <a href="regmech.html">Register your shop</a>
+        <a href="profile.html">Update Profile</a>
+        <a href="logout.php" >Log out</a>
+      </div>
+      <div class="w3-container w3-black" >
+      <span style="font-size:45px;cursor:pointer" onclick="openNav()">&#9776; </span> <!--9776 gives the 3 navbar lines-->
+      <span class="w3-text-with" style="font-size:45px"><b>CarSeva</b></span>
+      </div>
+      </div>
+      </div>
+    
+    <br>
+    <br>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Vehicle and owner Details</h2>
+                </div>
+                <div class="card-body">
+                    <form action='updateprofile.php' method="POST">
+                        <div class="form-row m-b-55">
+                            <div class="name">Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Vehicle name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="vehicle" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Plate Number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="plate" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Phone Number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="phone" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Update</button>
+                        </div>
+                    </form action='updateprofile.php'>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+        </header>
+
+</body>
+
+</html>
